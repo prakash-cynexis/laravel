@@ -13,12 +13,17 @@ class UsersTableSeeder extends Seeder {
     public function run() {
         $faker = Faker\Factory::create();
 
-        for ($x = 1; $x <= 10; $x++) :
+        DB::table('users')->insert([
+            'name' => $faker->name,
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin@123'),
+        ]);
+
+        for ($x = 1; $x <= 9; $x++) :
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'mobile' => 9893694008 + $x,
-                'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+                'password' => bcrypt('12345678'),
             ]);
         endfor;
     }
