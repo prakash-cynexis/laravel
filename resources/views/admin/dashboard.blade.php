@@ -17,7 +17,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            {{auth()->user()->authority->authority_name}}
+
                         </div>
                     </div>
                 </div>

@@ -32,8 +32,8 @@
                         <img src="{{asset('images/img.jpg')}}" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome, {{ ucfirst(strtolower(auth()->user()->authority->authority_name))}}</span>
-                        <h2>John Doe</h2>
+                        <span>Welcome, {{ $auth->role }}</span>
+                        <h2>{{ $auth->name }}</h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -83,7 +83,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:void(0);" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="{{asset('images/img.jpg')}}" alt="">John Doe
+                                <img src="{{asset('images/img.jpg')}}" alt="">{{ $auth->name }}
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

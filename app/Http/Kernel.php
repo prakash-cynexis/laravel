@@ -54,8 +54,7 @@ class Kernel extends HttpKernel {
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
-            SubstituteBindings::class,
-            LogRequestResponse::class
+            SubstituteBindings::class
         ],
 
         'api' => [
