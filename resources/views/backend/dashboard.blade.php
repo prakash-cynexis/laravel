@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('backend.layout.app')
 
 @section('content')
     <div class="right_col" role="main">

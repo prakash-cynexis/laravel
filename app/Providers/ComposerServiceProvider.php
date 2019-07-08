@@ -13,7 +13,7 @@ class ComposerServiceProvider extends ServiceProvider {
      */
     public function boot() {
         view()->composer(
-            'admin.layout.app',
+            'backend.layout.app',
             'App\Http\ViewComposers\ConfigurationComposer'
         );
     }
