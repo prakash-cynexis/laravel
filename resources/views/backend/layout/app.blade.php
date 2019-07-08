@@ -16,6 +16,7 @@
     <link href="{{ asset('vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('css/custom.min.css') }}" rel="stylesheet">
+    @yield('datatable-style')
 </head>
 <body class="nav-md">
 <div class="container body">
@@ -51,6 +52,7 @@
                         <h3>Live On</h3>
                         <ul class="nav side-menu">
                             <li><a href="{{route('dashboard')}}"><i class="fa fa-home"></i> Dashboard </a></li>
+                            <li><a href="{{route('users')}}"><i class="fa fa-users"></i> Users </a></li>
                         </ul>
                     </div>
                 </div>
@@ -127,5 +129,6 @@
 <script src="{{asset('vendors/nprogress/nprogress.js')}}"></script>
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('js/custom.min.js') }}"></script>
+@yield('datatable-script')
 </body>
 </html>

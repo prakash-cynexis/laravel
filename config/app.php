@@ -176,7 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        ComposerServiceProvider::class
+        ComposerServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class
 
     ],
 

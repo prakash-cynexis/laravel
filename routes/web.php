@@ -14,4 +14,9 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+    // Display view
+    Route::get('/users', 'DataTableController@index')->name('users');
+    // Get Data
+    Route::get('/users/lists', 'DataTableController@lists')->name('users/lists');
 });
