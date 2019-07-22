@@ -13,4 +13,12 @@ class Controller extends BaseController {
 
     public function __construct() {
     }
+
+    public function successResponse($message) {
+        return back()->with(['message' => $message])->withInput();
+    }
+
+    public function errorResponse($message) {
+        return back()->with(['message' => $message])->withInput();
+    }
 }
