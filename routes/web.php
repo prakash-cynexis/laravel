@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +12,9 @@ Route::get('/', function () {
     endif;
     return view('auth.login');
 });
+
+Route::get('test/request', [TestController::class, 'testRequest']);
+Route::get('test/response', [TestController::class, 'testResponse']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
