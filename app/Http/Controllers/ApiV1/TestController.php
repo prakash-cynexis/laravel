@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ApiV1;
 
+use App\Http\Controllers\Controller;
 use App\Support\AppResponseManager;
 use App\Support\WebResponseManager;
 use Illuminate\Support\Facades\Session;
