@@ -55,11 +55,11 @@ class AppResponseManager extends Response {
         return response($data, self::HTTP_BAD_REQUEST);
     }
 
-    public static function unauthorized($message, $response = []) {
+    public static function unauthorized($message, $response = [], $headers = []) {
         $data['error'] = true;
         $data['message'] = $message;
         if (!empty($response)) $data['response'] = $response;
-        return response($data, self::HTTP_UNAUTHORIZED);
+        return response($data, self::HTTP_UNAUTHORIZED, $headers);
     }
 
     public static function notFound($message, $response = []) {
