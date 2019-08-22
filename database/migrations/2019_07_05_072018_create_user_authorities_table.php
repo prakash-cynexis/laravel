@@ -14,10 +14,10 @@ class CreateUserAuthoritiesTable extends Migration {
     public function up() {
         Schema::create('user_authorities', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->primary();
-            $table->string('authority_name');
+            $table->string('name');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('authority_name')->references('name')->on('authorities')->onDelete('cascade');
+            $table->foreign('name')->references('name')->on('authorities')->onDelete('cascade');
         });
     }
 

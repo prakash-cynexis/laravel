@@ -5,6 +5,13 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @property string name
+ * @property string email
+ * @property string password
+ * @property string email_verified_at
+ * @property string remember_token
+ **/
 class User extends Authenticatable {
 
     use Notifiable;
@@ -34,6 +41,6 @@ class User extends Authenticatable {
     ];
 
     public function authority() {
-        return $this->hasOne('App\UserAuthority');
+        return $this->hasOne(UserAuthority::class);
     }
 }
