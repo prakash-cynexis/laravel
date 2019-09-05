@@ -82,4 +82,11 @@ class AppResponseManager extends Response {
         if (!empty($response)) $data['response'] = $response;
         return response($data, self::HTTP_NOT_ACCEPTABLE);
     }
+
+    public static function payloadTooLarge($message, $response = []) {
+        $data['error'] = true;
+        $data['message'] = $message;
+        if (!empty($response)) $data['response'] = $response;
+        return response($data, self::HTTP_REQUEST_ENTITY_TOO_LARGE);
+    }
 }
