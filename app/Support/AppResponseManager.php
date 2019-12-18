@@ -41,17 +41,15 @@ class AppResponseManager extends Response {
         return response($data, self::HTTP_CREATED);
     }
 
-    public static function noContent($message, $response = []) {
+    public static function noContent($message) {
         $data['error'] = true;
         $data['message'] = $message;
-        if (!empty($response)) $data['response'] = $response;
         return response($data, self::HTTP_NO_CONTENT);
     }
 
-    public static function badRequest($message, $response = []) {
+    public static function badRequest($message) {
         $data['error'] = true;
         $data['message'] = $message;
-        if (!empty($response)) $data['response'] = $response;
         return response($data, self::HTTP_BAD_REQUEST);
     }
 
@@ -62,10 +60,9 @@ class AppResponseManager extends Response {
         return response($data, self::HTTP_UNAUTHORIZED, $headers);
     }
 
-    public static function notFound($message, $response = []) {
+    public static function notFound($message) {
         $data['error'] = true;
         $data['message'] = $message;
-        if (!empty($response)) $data['response'] = $response;
         return response($data, self::HTTP_NOT_FOUND);
     }
 
@@ -88,5 +85,29 @@ class AppResponseManager extends Response {
         $data['message'] = $message;
         if (!empty($response)) $data['response'] = $response;
         return response($data, self::HTTP_REQUEST_ENTITY_TOO_LARGE);
+    }
+
+    public static function unprocessableEntity($message) {
+        $data['error'] = true;
+        $data['message'] = $message;
+        return response()->json($data, self::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    public static function conflict($message) {
+        $data['error'] = true;
+        $data['message'] = $message;
+        return response()->json($data, self::HTTP_CONFLICT);
+    }
+
+    public static function notActive() {
+        $data['error'] = true;
+        $data['message'] = 'Your Application Is Pending. Thank you for registering for an account with {Company Name}. Thank you for submitting all of your information. We are still reviewing your application. We will notify you of our decision once we have reviewed your information.';
+        return response()->json($data, self::HTTP_OK);
+    }
+
+    public static function error($message) {
+        $data['error'] = true;
+        $data['message'] = $message;
+        return response()->json($data, self::HTTP_OK);
     }
 }

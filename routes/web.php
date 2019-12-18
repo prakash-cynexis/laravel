@@ -24,3 +24,7 @@ Route::middleware('auth')->group(function () {
     // Get Data
     Route::get('/users/lists', 'DataTableController@lists')->name('users/lists');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
